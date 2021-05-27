@@ -1,14 +1,14 @@
 
 ## Nest+React Minimal App
 
-ToDo:
+Todo:
 
 - add react-ts client app
 - get data from server to client
 - generate CRUD with https://docs.nestjs.com/recipes/crud-generator
-- connect to Postgres with TypeORM
+- add TypeORM and connect Postgres DB
 - add Min.IO
 - add Recoil.js
 - add RabbitMQ
-- create Docker container
+- add Docker container
 - add Kubernetes orchestra
