@@ -3,9 +3,9 @@
 
 Todo:
 
-- add react-ts client app
+- add react-ts client app (done)
+- add example data into server's service
 - get data from server to client
-- generate CRUD with https://docs.nestjs.com/recipes/crud-generator
 - add TypeORM and connect Postgres DB
 - add Min.IO
 - add Recoil.js
