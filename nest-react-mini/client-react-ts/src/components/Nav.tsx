@@ -17,6 +17,9 @@ function Nav() {
           <Link to="/cars">Cars</Link>
         </MenuItem>
         <MenuItem>
+          <Link to="/recoil">Recoil</Link>
+        </MenuItem>
+        <MenuItem>
           <Link to="/about">About</Link>
         </MenuItem>
       </ul>

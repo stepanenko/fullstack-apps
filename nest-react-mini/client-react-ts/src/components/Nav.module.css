@@ -2,5 +2,6 @@
 .menuList {
   display: flex;
   list-style-type: none;
+  background-color: #282c34;
   margin: 0;
 }
