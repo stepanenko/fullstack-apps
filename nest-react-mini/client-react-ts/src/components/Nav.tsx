@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
 import MenuItem from "./MenuItem";
 
-const styles = require("./Nav.module.css");
+const style = require("./Nav.module.css");
 
 function Nav() {
   return (
     <nav>
-      <ul className={styles.menuList}>
+      <ul className={style.menuList}>
         <MenuItem>
           <Link to="/">Home</Link>
         </MenuItem>
         <MenuItem>
           <Link to="/countries">Countries</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to="/cars">Cars</Link>
         </MenuItem>
         <MenuItem>
           <Link to="/about">About</Link>

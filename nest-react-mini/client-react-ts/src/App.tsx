@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
+import Cars from "./components/Cars";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 
@@ -18,6 +19,9 @@ function App() {
           <Route path="/countries">
             <Countries />
           </Route>
+          <Route path="/cars">
+            <Cars />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -28,11 +32,36 @@ function App() {
 }
 
 function Countries() {
-  return <h2>Countries</h2>;
+  const countries = [
+    "France",
+    "Germany",
+    "UK",
+    "Switzerland",
+    "USA",
+    "Canada",
+    "Australia",
+  ];
+
+  return (
+    <div>
+      <h2>Countries</h2>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {countries.map((c) => (
+          <li key={c}>{c}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 function About() {
-  return <h2>About</h2>;
+  return (
+    <div>
+      <h2>About</h2>
+      <p>Part of Nest React Mini</p>
+      <p>Created on 28.05.2021</p>
+    </div>
+  );
 }
 
 export default App;
