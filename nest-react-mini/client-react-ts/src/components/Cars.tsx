@@ -11,7 +11,7 @@ function Cars() {
   const cars: Car[] = [
     { id: "123123", name: "Audi", year: 2019 },
     { id: "456456", name: "Toyota", year: 2021 },
-    { id: "456456", name: "Hyundai", year: 2020 },
+    { id: "336457", name: "Hyundai", year: 2020 },
   ];
 
   return (
