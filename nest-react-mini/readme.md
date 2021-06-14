@@ -4,8 +4,8 @@
 Todo:
 
 - add react-ts client app (done)
-- add example data into server's service
-- get data from server to client
+- add example data into server's service (done)
+- get data from server to client (done)
 - add TypeORM and connect Postgres DB
 - add Min.IO
 - add Recoil.js (done)

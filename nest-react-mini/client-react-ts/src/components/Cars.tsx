@@ -9,7 +9,7 @@ interface Car {
 }
 
 function Cars() {
-  const [fetchedCars, setFetchedCars] = useState<any[]>([]);
+  const [fetchedCars, setFetchedCars] = useState<Car[]>([]);
 
   const cars: Car[] = [
     { id: "123123", name: "Audi", year: 2019 },
@@ -47,11 +47,11 @@ function Cars() {
 
   return (
     <div>
-      <h2>Cars</h2>
+      <h2>Hardcoded (Client) Cars:</h2>
       <ul className={style.carsList}>
         {cars.map(car => <li key={car.id}>{car.name} - {car.year}</li>)}
       </ul>
-      <h2>Fetched Cars</h2>
+      <h2>Fetched (Server) Cars:</h2>
       <ul className={style.carsList}>
         {fetchedCars.map(car => <li key={car.id}>{car.name} : {car.year}</li>)}
       </ul>
