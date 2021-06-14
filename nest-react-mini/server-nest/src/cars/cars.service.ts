@@ -7,6 +7,7 @@ export class CarsService {
   private cars: Car[] = [
     { id: "123123", name: "Audi", year: 2019 },
     { id: "456456", name: "Toyota", year: 2021 },
+    { id: "456111", name: "Hyundai", year: 2018 },
   ];
 
   create(car: CreateCarDto) {
@@ -34,7 +35,7 @@ export class CarsService {
 
   deleteOne(id: string): string {
     const index = this.cars.findIndex((car) => car.id === id);
-    if (index < 0) return 'Such car was not found!';
+    if (index < 0) return 'Such car doesn\'t exist!';
     this.cars = this.cars.filter((car) => car.id !== id);
     return `Car with id ${id} has been removed.`;
   }

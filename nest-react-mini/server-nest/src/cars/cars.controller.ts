@@ -13,7 +13,7 @@ import { Car } from "./interfaces/car.interface";
 
 @Controller("cars")
 export class CarsController {
-  constructor(private readonly carsService: CarsService) {}
+  constructor(private readonly carsService: CarsService) { }
 
   @Post() create(@Body() createCarDto: CreateCarDto) {
     return this.carsService.create(createCarDto);
