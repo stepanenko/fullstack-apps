@@ -1,10 +1,13 @@
 import { atom, selector, useRecoilState, useRecoilValue } from "recoil";
 
+import TodoList from "./TodoList";
+
 function Recoil() {
   return (
     <div>
       <RecoilAbout />
       <CharacterCounter />
+      <TodoList />
       <RecoilDocs />
     </div>
   );
