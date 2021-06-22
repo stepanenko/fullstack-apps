@@ -3,7 +3,9 @@ import { atom, selector, useRecoilState, useRecoilValue } from "recoil";
 function Recoil() {
   return (
     <div>
+      <RecoilAbout />
       <CharacterCounter />
+      <RecoilDocs />
     </div>
   );
 }
@@ -11,10 +13,8 @@ function Recoil() {
 function CharacterCounter() {
   return (
     <div>
-      <RecoilAbout />
       <TextInput />
       <CharacterCount />
-      <RecoilDocs />
     </div>
   );
 }
