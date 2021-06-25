@@ -5,10 +5,14 @@ import TodoList from "./TodoList";
 function Recoil() {
   return (
     <div>
-      <RecoilAbout />
-      <CharacterCounter />
-      <TodoList />
-      <RecoilDocs />
+      <div style={{ display: "flex" }}>
+        <RecoilAbout />
+        <RecoilDocs />
+      </div>
+      <div style={{ display: "flex", justifyContent: 'space-evenly' }}>
+        <CharacterCounter />
+        <TodoList />
+      </div>
     </div>
   );
 }
@@ -36,7 +40,7 @@ function TextInput() {
 
   return (
     <div>
-      <h4>Recoil's Counter App:</h4>
+      <h4>Counter App:</h4>
       <input type="text" value={text} onChange={onChange} />
       <p>Echo: {text}</p>
     </div>
@@ -60,8 +64,7 @@ function CharacterCount() {
 
 function RecoilDocs() {
   return (
-    <>
-      <h4>Recoil Docs:</h4>
+    <div style={{ width: '40%', padding: '20px' }}>
       <a
         style={{ display: "block" }}
         href="https://recoiljs.org/docs/introduction/core-concepts"
@@ -86,14 +89,14 @@ function RecoilDocs() {
       >
         Development Tools
       </a>
-    </>
+    </div>
   );
 }
 
 function RecoilAbout() {
   return (
     <>
-      <p style={{ width: "80%", margin: "20px auto" }}>
+      <p style={{ width: "60%", margin: "20px" }}>
         Recoil lets you create a data-flow graph that flows from atoms (shared
         state) through selectors (pure functions) and down into your React
         components. Atoms are units of state that components can subscribe to.

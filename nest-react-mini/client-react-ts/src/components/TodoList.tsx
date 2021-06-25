@@ -9,13 +9,13 @@ const todoListState = atom({
 });
 
 export default function TodoList() {
-  const todoList = useRecoilValue(todoListState);
+  const todoList = useRecoilValue(filteredTodoListState);
 
   return (
     <div>
-      <h4>Recoil's Todo List App:</h4>
+      <h4>Todo List App:</h4>
       {/* <TodoListStats /> */}
-      {/* <TodoListFilters /> */}
+      <TodoListFilters />
       <TodoItemCreator />
 
       {todoList.map((todoItem: any) => (
@@ -106,4 +106,47 @@ function replaceItemAtIndex(arr: any, index: number, newValue: any) {
 
 function removeItemAtIndex(arr: any, index: number) {
   return [...arr.slice(0, index), ...arr.slice(index + 1)];
+}
+
+const todoListFilterState = atom({
+  key: 'todoListFilterState',
+  default: 'Show All',
+});
+
+// The filteredTodoListState internally keeps track of two dependencies:
+// todoListFilterState and todoListState so that it re-runs if either of those change.
+const filteredTodoListState = selector({
+  key: 'filteredTodoListState',
+  get: ({ get }) => {
+    const filter = get(todoListFilterState);
+    const list = get(todoListState);
+
+    switch (filter) {
+      case 'Show Completed':
+        return list.filter((item: any) => item.isComplete);
+      case 'Show Uncompleted':
+        return list.filter((item: any) => !item.isComplete);
+      default:
+        return list;
+    }
+  },
+});
+
+function TodoListFilters() {
+  const [filter, setFilter] = useRecoilState(todoListFilterState);
+
+  const updateFilter = ({ target: { value } }: any) => {
+    setFilter(value);
+  };
+
+  return (
+    <>
+      Filter:
+      <select value={filter} onChange={updateFilter}>
+        <option value="Show All">All</option>
+        <option value="Show Completed">Completed</option>
+        <option value="Show Uncompleted">Uncompleted</option>
+      </select>
+    </>
+  );
 }
