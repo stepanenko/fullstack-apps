@@ -23,5 +23,5 @@ Simply return a Promise to a value instead of the value itself from a **selector
 Because these are just **selectors**, other **selectors** can also depend on them to further transform the data.
 
 Todo:
+- check and add sync and async examples from https://recoiljs.org/docs/guides/asynchronous-data-queries/
 - explore selectors more: https://recoiljs.org/docs/api-reference/core/selector/
-- 
