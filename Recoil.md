@@ -22,7 +22,7 @@ Atoms cannot be used to store `Promise`'s or `RecoilValue`'s directly, but they 
 Note that Promise's may be mutable. Atoms can be set to a `function`, as long as it is pure, but to do so
 you may need to use the updater form of setters. (e.g. `set(myAtom, () => myFunc);`).
 
-### Selectors
+### [Selectors](https://recoiljs.org/docs/api-reference/core/selector)
 A **selector** represents a piece of **derived state**. You can think of derived state as the output
 of passing state to a pure function that modifies the given state in some way.
 
@@ -38,7 +38,7 @@ From a component's point of view, **selectors** can be read using the same hooks
 However it's important to note that certain hooks only work with **writable state** (i.e `useRecoilState()`).
 All atoms are writable state, but only some selectors are considered writable state (selectors that have both a `get` and `set` property).
 
-### Asynchronous Data Queries
+### [Asynchronous Data Queries](https://recoiljs.org/docs/guides/asynchronous-data-queries)
 
 Recoil can map state and **derived state** to React components via a data-flow graph. The functions in the graph can also be asynchronous.
 So we can use asynchronous functions in synchronous React component render functions.
