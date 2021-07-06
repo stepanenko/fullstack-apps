@@ -38,6 +38,15 @@ From a component's point of view, **selectors** can be read using the same hooks
 However it's important to note that certain hooks only work with **writable state** (i.e `useRecoilState()`).
 All atoms are writable state, but only some selectors are considered writable state (selectors that have both a `get` and `set` property).
 
+Selectors represent a function, or **derived state** in Recoil. You can think of them as similar to
+an "idempotent" or "pure function" without side-effects that always returns the same value for a given set of dependency values.
+If only a `get` function is provided, the selector is read-only and returns a `RecoilValueReadOnly` object.
+If a `set` is also provided, it returns a writeable `RecoilState` object.
+
+Recoil manages atom and selector state changes to know when to notify components subscribing to that selector to re-render.
+If an object value of a selector is mutated directly it may bypass this and avoid properly notifying subscribing components.
+To help detect bugs, Recoil will freeze selector value objects in development mode.
+
 ### [Asynchronous Data Queries](https://recoiljs.org/docs/guides/asynchronous-data-queries)
 
 Recoil can map state and **derived state** to React components via a data-flow graph. The functions in the graph can also be asynchronous.
