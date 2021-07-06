@@ -1,4 +1,4 @@
-### Atoms
+### [Atoms](https://recoiljs.org/docs/api-reference/core/atom)
 An atom represents state in Recoil. The `atom()` function returns a writeable `RecoilState` object.
 
 Recoil manages atom state changes to know when to notify components subscribing to that atom to re-render,
