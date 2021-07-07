@@ -24,8 +24,7 @@ you may need to use the updater form of setters. (e.g. `set(myAtom, () => myFunc
 
 ### [Selectors](https://recoiljs.org/docs/api-reference/core/selector)
 A **selector** represents a piece of **derived state**
-(the output of passing state to a pure function that modifies the given state in some way)
-
+(the output of passing state to a pure function that modifies the given state in some way).
 Derived state is a powerful concept because it lets us build dynamic data that depends on other data.
 
 Selectors can be used as one way to incorporate asynchronous data into the Recoil data-flow graph.
