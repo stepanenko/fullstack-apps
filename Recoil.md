@@ -1,4 +1,5 @@
 ### [Atoms](https://recoiljs.org/docs/api-reference/core/atom)
+
 An atom represents state in Recoil. The `atom()` function returns a writeable `RecoilState` object.
 
 Recoil manages atom state changes to know when to notify components subscribing to that atom to re-render,
@@ -22,7 +23,24 @@ Atoms cannot be used to store `Promise`'s or `RecoilValue`'s directly, but they 
 Note that Promise's may be mutable. Atoms can be set to a `function`, as long as it is pure, but to do so
 you may need to use the updater form of setters. (e.g. `set(myAtom, () => myFunc);`).
 
+[**Atom Family**](https://recoiljs.org/docs/api-reference/utils/atomFamily)
+
+An `atom` represents a piece of state with Recoil. An atom is created and registered per `<RecoilRoot>` by your app.
+But, what if your state isn’t global? What if your state is associated with a particular instance of a control, or with a particular element?
+For example, maybe your app is a UI prototyping tool where the user can dynamically add elements and each element has state, such as its position.
+Ideally, each element would get its own atom of state. You could implement this yourself via a memoization pattern.
+But, Recoil provides this pattern for you with the atomFamily utility. An Atom Family represents a collection of atoms.
+When you call atomFamily it will return a function which provides the `RecoilState` atom based on the parameters you pass in.
+
+The `atomFamily` essentially provides a map from the parameter to an atom. You only need to provide a single key for the `atomFamily` and it will
+generate a unique key for each underlying atom. These atom keys can be used for persistence, and so must be stable across application executions.
+The parameters may also be generated at different callsites and we want equivalent parameters to use the same underlying atom.
+Therefore, value-equality is used instead of reference-equality for `atomFamily` parameters.
+This imposes restrictions on the types which can be used for the parameter. atomFamily accepts primitive types,
+or arrays or objects which can contain arrays, objects, or primitive types.
+
 ### [Selectors](https://recoiljs.org/docs/api-reference/core/selector)
+
 A **selector** represents a piece of **derived state**
 (the output of passing state to a pure function that modifies the given state in some way).
 Derived state is a powerful concept because it lets us build dynamic data that depends on other data.
