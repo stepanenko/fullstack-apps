@@ -39,6 +39,8 @@ Therefore, value-equality is used instead of reference-equality for `atomFamily`
 This imposes restrictions on the types which can be used for the parameter. atomFamily accepts primitive types,
 or arrays or objects which can contain arrays, objects, or primitive types.
 
+-----
+
 ### [Selectors](https://recoiljs.org/docs/api-reference/core/selector)
 
 A **selector** represents a piece of **derived state**
