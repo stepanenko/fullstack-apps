@@ -8,15 +8,16 @@ import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
 @Module({
   imports: [
     CarsModule,
-    RabbitMQModule.forRoot(RabbitMQModule, {
-      exchanges: [
-        {
-          name: 'exchange1',
-          type: 'topic',
-        },
-      ],
-      uri: 'amqp://rabbitmq:rabbitmq@localhost:5672',
-    }),],
+    // RabbitMQModule.forRoot(RabbitMQModule, {
+    //   exchanges: [
+    //     {
+    //       name: 'exchange1',
+    //       type: 'topic',
+    //     },
+    //   ],
+    //   uri: 'amqp://rabbitmq:rabbitmq@localhost:5672',
+    // }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
