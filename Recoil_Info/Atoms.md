@@ -1,3 +1,4 @@
+
 ### [Atoms](https://recoiljs.org/docs/api-reference/core/atom)
 
 An atom represents state in Recoil. The `atom()` function returns a writeable `RecoilState` object.
