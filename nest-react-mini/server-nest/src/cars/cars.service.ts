@@ -8,6 +8,7 @@ export class CarsService {
     { id: "123123", name: "Audi", year: 2019 },
     { id: "456456", name: "Toyota", year: 2021 },
     { id: "456111", name: "Hyundai", year: 2018 },
+    { id: "222343", name: "Nissan", year: 1997 },
   ];
 
   create(car: CreateCarDto) {
