@@ -1,11 +1,6 @@
 import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Put,
-  Delete,
+  Controller, Get, Post, Body,
+  Param, Put, Delete, NotFoundException,
 } from "@nestjs/common";
 import { CreateCarDto, UpdateCarDto } from "./dto";
 import { CarsService } from "./cars.service";
@@ -24,7 +19,11 @@ export class CarsController {
   }
 
   @Get(":id") findOne(@Param("id") id: string) {
-    return this.carsService.getOne(id);
+    const car = this.carsService.getOne(id);
+
+    if (!car) throw new NotFoundException('Such car was not found.');
+
+    return car;
   }
 
   @Put(":id")
