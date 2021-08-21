@@ -17,41 +17,36 @@ function Cars() {
   ];
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   const result = await fetch('http://localhost:4000/cars');
+    const fetchData = async () => {
+      const response = await fetch('http://localhost:4000/cars');
+      
+      const result = await response.json();
+      console.log('result', result);
 
-    //   setData(result.data);
-    // };
-    // fetchData();
+      setFetchedCars(result);
+    };
+
+    fetchData();
     // from https://www.robinwieruch.de/react-hooks-fetch-data
 
-    fetch('http://localhost:4000/cars', {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      // mode: 'no-cors', // no-cors, *cors, same-origin
-      headers: {
-        // 'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      }
-      // body: JSON.stringify(data) // body data type must match "Content-Type" header
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-        setFetchedCars(data)
-        console.log('fetchedCars', fetchedCars); // here 'fetchedCars' isn't ready, i.e. []
-      })
-      .catch((error) => {
-        console.error('Client (React) couldn\'t fetch data:', error);
-      });
+    // fetch('http://localhost:4000/cars')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     setFetchedCars(data)
+    //     console.log('fetchedCars', fetchedCars); // here 'fetchedCars' isn't ready, i.e. []
+    //   })
+    //   .catch((error) => {
+    //     console.error('FE couldn\'t fetch data:', error);
+    //   });
   }, []);
 
   return (
     <div>
-      <h2>Hardcoded (Client) Cars:</h2>
+      <h2>Hardcoded Cars:</h2>
       <ul className={style.carsList}>
         {cars.map(car => <li key={car.id}>{car.name} - {car.year}</li>)}
       </ul>
-      <h2>Fetched (Server) Cars:</h2>
+      <h2>Fetched from Nest server Cars:</h2>
       <ul className={style.carsList}>
         {fetchedCars.map(car => <li key={car.id}>{car.name} : {car.year}</li>)}
       </ul>
