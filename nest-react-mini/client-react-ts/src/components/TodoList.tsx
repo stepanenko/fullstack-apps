@@ -1,7 +1,9 @@
 
 import { useState } from "react";
-import { atom, selector, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-
+import {
+  atom, selector, useRecoilState,
+  useRecoilValue, useSetRecoilState
+} from "recoil";
 
 const todoListState = atom({
   key: 'todoListState',

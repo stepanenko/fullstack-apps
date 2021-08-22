@@ -18,12 +18,13 @@ function Cars() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:4000/cars');
-      
-      const result = await response.json();
-      console.log('result', result);
-
-      setFetchedCars(result);
+      try {
+        const response = await fetch('http://localhost:4000/cars');
+        const result = await response.json();
+        setFetchedCars(result);
+      } catch (err) {
+        console.log('Error when fetching:', err);
+      }
     };
 
     fetchData();
