@@ -9,17 +9,19 @@ async function bootstrap() {
   app.enableCors();
 
   const config = new DocumentBuilder()
-    .setTitle('Nest Minimal')
-    .setDescription('The Nest Minimal Api')
+    .setTitle('The Nest Minimal API')
     .setVersion('1.0')
-    .addTag('minimal')
     .build();
   const options: SwaggerDocumentOptions = {
     operationIdFactory: (ctrlKey: string, methodKey: string) => methodKey
   };
   const document = SwaggerModule.createDocument(app, config, options);
 
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api', app, document, {
+    customSiteTitle: 'Nest Minimal API',
+    customCssUrl: 'http://localhost:4000/swagger.css',
+    customfavIcon: 'http://localhost:4000/favicon-32x32.png',
+  });
 
   await app.listen(port);
 

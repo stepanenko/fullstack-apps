@@ -1,0 +1,94 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap);
+
+* {
+    font-family: 'Manrope', sans-serif !important;
+    outline: none !important;
+}
+
+.swagger-ui {
+    background: #fff;
+}
+
+.swagger-ui .topbar {
+    padding: 16px 0;
+    background: #1A1D26;
+}
+
+.swagger-ui .topbar img {
+    content: url('./cars-192x192.png');
+}
+
+.swagger-ui .info {
+    margin: 20px 0;
+}
+
+.swagger-ui .info pre {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.swagger-ui .info .title {
+    font-size: 32px;
+    text-align: center;
+}
+
+.swagger-ui .info .title small {
+    background: #5d626d;
+}
+
+.swagger-ui .info .title small.version-stamp {
+    background: #039BE5;
+}
+
+.swagger-ui .scheme-container {
+    box-shadow: none;
+    padding: 0;
+}
+
+.swagger-ui .auth-wrapper {
+    justify-content: center;
+}
+
+.swagger-ui .schemes.wrapper.block .auth-wrapper .btn.authorize {
+    color: #3b4151;
+    border-color: #5d626d;
+}
+
+.swagger-ui .btn.authorize svg {
+    fill: #5d626d;
+}
+
+.swagger-ui .btn {
+    height: 42px;
+    margin-right: 10px;
+    border: 1px solid #5d626d;
+    transition: none;
+}
+
+.swagger-ui .btn:hover {
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 30%);
+}
+
+.swagger-ui .auth-container input[type=text] {
+    line-height: 23px;
+}
+
+.swagger-ui .models-control {
+    background: none;
+}
+
+.swagger-ui section.models h4 {
+    padding: 16px 20px 16px 20px;
+    transition: none;
+}
+
+.swagger-ui section.models.is-open h4 {
+    margin: 0;
+    border-bottom: none;
+}
+
+.swagger-ui .model p {
+    font-weight: 500;
+    margin: 0 0 1.5em;
+}
