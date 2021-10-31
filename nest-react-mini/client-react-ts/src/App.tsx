@@ -9,6 +9,7 @@ import Countries from "./components/Countries";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 import Recoil from "./components/Recoil";
+import Tweets from "./components/Tweets";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
               </Route>
               <Route path="/recoil">
                 <Recoil />
+              </Route>
+              <Route path="/tweets">
+                <Tweets />
               </Route>
               <Route path="/">
                 <Home />

@@ -20,6 +20,9 @@ function Nav() {
           <Link to="/recoil">Recoil</Link>
         </MenuItem>
         <MenuItem>
+          <Link to="/tweets">Tweets</Link>
+        </MenuItem>
+        <MenuItem>
           <Link to="/about">About</Link>
         </MenuItem>
       </ul>

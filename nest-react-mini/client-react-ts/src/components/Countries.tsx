@@ -5,6 +5,8 @@ export default function Countries() {
     "Germany",
     "UK",
     "Switzerland",
+    "Luxembourg",
+    "Netherlands",
     "USA",
     "Canada",
     "Australia",
